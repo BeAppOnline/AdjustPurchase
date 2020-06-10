@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //inApp-Purchase
+    implementation 'com.android.billingclient:billing:2.2.1'
+     implementation 'com.android.support:recyclerview-v7:29.0.0'
+    implementation 'com.github.BeAppOnline:AdjustExample:1.0.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.android.gms:play-services-ads:19.1.0'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+
+    // ADJUST IMPLEMENTATION
+    implementation 'com.adjust.sdk:adjust-android:4.21.2'
+    implementation 'com.android.installreferrer:installreferrer:1.1.2'
+    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
+
+
+    //Add Google Play Services
+    implementation 'com.google.android.gms:play-services-analytics:17.0.0'
+
+
+    //Adjust Kit Integration
+    implementation 'com.mparticle:android-adjust-kit:5+'
+}

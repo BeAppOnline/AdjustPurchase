@@ -1,0 +1,3 @@
+rootProject.name='APurchase'
+include ':app'
+include ':afpurchase'

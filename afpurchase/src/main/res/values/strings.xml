@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- Adjust values-->
+    <string name="adjust_token">qthv9lwuxhq8</string>
+
+    <string name="adjust_error_event">mljl7t</string>
+
+    <string name="adjust_success_billing">vsid5o</string>
+
+    <string name="adjust_restore_billing_success">87eee6</string>
+    <!-- Adjust values-->
+
+    <string name="banner_id">ca-app-pub-1944147142676857/5421479078</string>
+    <string name="test_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitial_id">ca-app-pub-6373407359796858/9420925106</string>
+    <string name="test_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="app_id">ca-app-pub-1944147142676857~5996194148</string>
+    <string name="productID"> example </string>
+
+</resources>
