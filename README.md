@@ -14,7 +14,7 @@ allprojects {
  Step 2. Add the dependency
  ```
  dependencies {
-	        implementation 'com.github.BeAppOnline:AdjustPurchase:Tag'
+	        implementation 'com.github.BeAppOnline:AdjustPurchase:1.0.0'
 	}
  ```
  
