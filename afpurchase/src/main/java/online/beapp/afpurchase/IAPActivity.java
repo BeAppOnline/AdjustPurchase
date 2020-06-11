@@ -35,7 +35,7 @@ import online.beapp.adjustevents.User;
 import timber.log.Timber;
 
 @SuppressLint("Registered")
-public class IAPActivity extends AppCompatActivity {
+public abstract class IAPActivity extends AppCompatActivity {
 
     private final String TAG = IAPActivity.class.getSimpleName();
 
@@ -53,13 +53,18 @@ public class IAPActivity extends AppCompatActivity {
     private boolean oldValuePurchase = false;
     public User user;
     public MutableLiveData<Boolean> purchaseStatus = new MutableLiveData<>();
-    public Class<?> DefaultIAPActivity;
+    public Class<?> defaultIAPActivity;
 
+    public abstract Class<?> setDefaultIAPActivity();
+
+    public IAPActivity() {
+        this.defaultIAPActivity = setDefaultIAPActivity();
+    }
 
     private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Intent intent1 = new Intent(context, DefaultIAPActivity);
+            Intent intent1 = new Intent(context, defaultIAPActivity);
             intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             try {
                 Uri data = intent.getData();
@@ -81,7 +86,7 @@ public class IAPActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (DefaultIAPActivity == null) {
+        if (defaultIAPActivity == null) {
             throw new RuntimeException("Please initialize DefaultUAPActivity with your current Billing Screen");
         }
         productID = getResources().getString(R.string.productID);
@@ -313,7 +318,7 @@ public class IAPActivity extends AppCompatActivity {
     }
 
     private void startInAppBilling() {
-        Intent intent1 = new Intent(this, DefaultIAPActivity);
+        Intent intent1 = new Intent(this, defaultIAPActivity);
         startActivity(intent1);
     }
 

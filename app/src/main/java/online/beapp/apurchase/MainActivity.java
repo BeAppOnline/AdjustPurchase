@@ -9,11 +9,15 @@ import online.beapp.afpurchase.IAPActivity;
 public class MainActivity extends IAPActivity {
 
     @Override
+    public Class<?> setDefaultIAPActivity() {
+        return DefaultIAPActivity.class;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-        DefaultIAPActivity = DefaultIAPActivity.class;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
     }
+
+
 }

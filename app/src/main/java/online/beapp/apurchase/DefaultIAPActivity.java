@@ -1,12 +1,15 @@
 package online.beapp.apurchase;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-
 import online.beapp.afpurchase.IAPActivity;
 
 public class DefaultIAPActivity extends IAPActivity {
+
+
+    @Override
+    public Class<?> setDefaultIAPActivity() {
+        return this.getClass();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
